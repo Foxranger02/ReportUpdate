@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Mirror</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <style>
@@ -185,6 +184,30 @@ h1{
     margin: 40px;
     font-size: 1em;
 }
+
+.first{
+    text-align: center;
+    align-items: center;
+}
+.first img{
+    height: 220px;
+    width: 200px;
+    border-radius: 25px;
+    padding: 20px;
+}
+.second-third img{
+    height: 200px;
+    width: 180px;
+    border-radius: 25px;
+    padding: 20px;
+}
+.second-third{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.second-third div{
+    text-align: center;
+}
 </style>
 
 
@@ -271,6 +294,28 @@ h1{
             See Full report
         </button>
     </form>
+
+
+    <div>
+        <h1 class="test">Top 3 Hygienic Workers</h1>   
+        <div class="first">
+            <img src="{{url_for('first')}}" alt="" >
+            <p>1. {{ f }}</p>
+        </div>
+        <div class="second-third">
+            <div>
+                <img src="{{url_for('second')}}" alt="" >
+                <p>2. {{ s }}</p>
+            </div>
+            <div>
+                <img src="{{url_for('third')}}" alt="">
+                <p>3. {{ t }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <div id="about">
         <h1>
