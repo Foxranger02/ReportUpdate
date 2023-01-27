@@ -1,8 +1,7 @@
-
-
 import pandas
 from flask import Flask,render_template,jsonify,request,json,send_file
-import time
+from df import result
+
 
 
 
@@ -20,7 +19,7 @@ def home():
         "l":l})
 
 
-    return render_template("home.html")
+    return render_template("home.html",f=result[-1],s=result[-2],t=result[-3])
 @app.route("/report")
 def report():
     if request.is_json :
@@ -42,5 +41,25 @@ def download_file():
 def insta():
     path = 'templates/img/instagram.png'
     return send_file(path)
+
+
+@app.route("/first")
+def first():
+    path = r'templates\Images'
+
+    return send_file(path+f'\{result[-1]}.jpg')
+
+@app.route("/second")
+def second():
+    path = r'templates\Images'
+
+    return send_file(path+f'\{result[-2]}.jpg')
+
+@app.route("/third")
+def third():
+    path = r'templates\Images'
+
+    return send_file(path+f'\{result[-3]}.jpg')
+
 if __name__ == "__main__":
-    app.run(debug=Flase)
+    app.run(debug=True)
