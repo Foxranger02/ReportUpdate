@@ -213,9 +213,10 @@ h1{
                     for(let i=(response.l)-1;i>=(response.l)-5;i--){
                         
                         const tr = document.createElement("tr");
-                        tr.innerHTML = `<td class='t0'>${date[i]}</td><td class='t1'>${name[i]}</td><td class='t2'>${time[i]}</td><td><img src='data:image/png;base64,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' height = '100px' width='100px'></td>` ;
-                        
-                             
+                        var path = "static/Images/"+name[i]+".jpg";
+                        console.log(path);
+                        tr.innerHTML = `<td class='t0'>${date[i]}</td><td class='t1'>${name[i]}</td><td class='t2'>${time[i]}</td><td><img src='${path}' height = '100px' width='100px'></td>` ;
+                           
                         document.querySelector("tbody").append(tr);
                         
                     }
@@ -234,6 +235,7 @@ h1{
 
 </script>
 <body>
+    
     <div class="test">
         <div>
             <h1 >Smart Mirror - Handwashing Report </h1>
